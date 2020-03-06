@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Monaco;
+\f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Oblique;\f5\froman\fcharset0 Times-Bold;
+\f6\froman\fcharset0 Times-Roman;\f7\froman\fcharset0 Times-Italic;}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red242\green242\blue242;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c96078\c96078\c96078;
+\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Use text tools from assn 1 to break down 500mb file into smaller sets to test code on. \
+Use DC data set\
+Place in data/DC\
+Must unzip complete 500 mb file to repository\'92s data.USA_full\
+\
+MIUST HARDCODE NAME OF FILE, BUT NOT DIRECTORY INTO CODE\
+\
+Notes on how to do this properly:\
+\pard\pardeftab720\sl360\sa240\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 You must combine the user-specified directory with a hard-coded filename to yield a relative path that will let your program open the files area_titles.csv and 2018.annual.singlefile.csv in that directory.\
+While there are lots of ways to combine paths, let me show you the best way:\
+\pard\pardeftab720\sl240\partightenfactor0
+
+\f2\fs36 \cf2 \cb4 filename = f"\{sys.argv[1]\}/area_titles.csv"\
+
+\fs18 \
+\pard\pardeftab720\sl360\sa240\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 Notice the frontslash.\'a0 Python will convert this to a backslash if you're on Windows, and it will work transparently on Mac and Linux.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+Examples of command line input:\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f3 \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 $ python src/main.py data/DC\
+$ python src/main.py data/USA_full\
+\
+Print usage message if no directory is given\
+Example:\
+$ python src/main.py\
+Usage: src/main.py DATA_DIRECTORY\
+\
+Do not need to account for non-existent directory input\
+\
+Src/Report.py should not be modified\
+\
+FINAL SUBMISSION MUST NOT WRITE ANY OTHER DATA TO STDOUT\
+\
+area_titles.csv (should be hard-coded into program)\
+- contains area_fips and area_title\
+Create a dictionary (dict()) of area_titles.csv\
+Review lecture notes demo Fri Oct 04 about dictionaries\
+\
+READ AND UNDERSTAND QCEW Area Code Guide (link in instructions)\
+\
+You can decide which lines to consider in final report based solely from area_fips. \
+\
+\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\fs26 \cf5 The report should contain data only from counties and county-equivalent divisions (Louisiana has parishes, Alaska has boroughs and census areas, Puerto Rico has Municipios). Your report must include "Overseas Locations"; "Multicounty, Not Statewide"; "Out-of-State"; and "Unknown Or Undefined" areas. 
+\f4\i All of these are easily identified by looking only at their FIPS codes.
+\f3\i0 \
+The report must include data from all 50 states, the District of Columbia, and territories of the United States of America. Your report must not include US aggregate data, per-state aggregate data, nor should it consider metropolitan areas. Inclusion of these areas will result in an incorrect report. 
+\f4\i Again, all of these can be easily identified by the form of their FIPS codes.\
+\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f5\i0\b\fs36 \cf5 Exclude these areas\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
+\ls1\ilvl0
+\f6\b0 \cf5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 "U.S. combined" and "TOTAL" FIPS areas (Starts with CS ex. CS176) (Starts with US ex. USMSA)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 All areas labeled "statewide"  (Ends in 000 ex.  21000)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 MicroSAs (Starts with C ex. C3350)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 MSAs (Starts with M or CMS ex. M2760 or CMS77)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 CSAs\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Federal Bureau of Investigation \'96 undesignated\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f5\b \cf5 Do 
+\f7\i\b0 not
+\f5\i0\b  exclude these areas\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
+\ls2\ilvl0
+\f6\b0 \cf5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Puerto Rico\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Washington, D.C.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Virgin Islands\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\fs24 \cf5 \
+
+\fs26 We are just working with one file: 2018.annual.singlefile.csv\
+The fields of this file that we want are\
+1. total_annual_wages\
+2. annual_avg_emplvl\
+3. annual_avg_estabs\
+\
+We also must exclude some lines completely because we don\'92t want to count the same info twice\
+\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f5\b \cf5 Excluded areas\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f6\b0 \cf5 Some rows contain data for areas that do not belong in our report. You can identify which lines to skip by inspecting the FIPS code column.\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f5\b \cf5 "All Industries"\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f6\b0 \cf5 Keep records where 
+\f3 industry_code
+\f6  is equal to "10" and 
+\f3 own_code
+\f6  is equal to "0".\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f5\b \cf5 "Software Publishing Industry"\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f6\b0 \cf5 Keep records where 
+\f3 industry_code
+\f6  is equal to "5112" and 
+\f3 own_code
+\f6  is equal to "5".\
+
+\f5\b All other industry codes are excluded from the report.
+\f6\b0\fs24 \
+\
+Cannot use python csv module for processing CSV data\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f3 \cf5 \
+\
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+}

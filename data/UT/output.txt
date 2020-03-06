@@ -1,0 +1,38 @@
+
+[============]
+[Final Report]
+[============]
+
+Statistics over all industries in 2018:
+=========================================================
+Number of FIPS areas in report       29
+
+Gross annual wages                   $71,726,471,120
+Area with maximum annual wages       Salt Lake County, Utah
+Maximum reported wage                $38,506,959,767
+
+Total number of establishments       103,581
+Area with most establishments        Salt Lake County, Utah
+Maximum # of establishments          46,269
+
+Gross annual employment level        1,478,496
+Area with maximum employment         Salt Lake County, Utah
+Maximum reported employment level    701,784
+
+
+Statistics over the software publishing industry in 2018:
+=========================================================
+Number of FIPS areas in report       16
+
+Gross annual wages                   $1,287,190,117
+Area with maximum annual wages       Utah County, Utah
+Maximum reported wage                $670,059,880
+
+Total number of establishments       642
+Area with most establishments        Salt Lake County, Utah
+Maximum # of establishments          405
+
+Gross annual employment level        10,637
+Area with maximum employment         Utah County, Utah
+Maximum reported employment level    5,303
+
